@@ -36,6 +36,43 @@ namespace WinDemo
 
         #endregion
 
+        protected void GetDefaultAccountByUrl(string url, out WinDemo.BaseConst.Realm rlm, out string userName, out string pwd,
+            out string consumerKey, out string consumerSecret)
+        {
+            rlm = BaseConst.Realm.People;
+            userName = BaseConst.PortalUserName;
+            consumerKey = BaseConst.ConsumerKey1stParty;
+            consumerSecret = BaseConst.ConsumerSecret1stParty;
+
+            pwd = BaseConst.PortalUserPassword;
+
+            if (url.Contains(WinDemo.BaseConst.Realm.People.ToString()))
+            {
+                userName = BaseConst.PortalUserName;
+                pwd = BaseConst.PortalUserPassword;
+                rlm = BaseConst.Realm.People;
+            }
+            else if (url.Contains(WinDemo.BaseConst.Realm.Groups.ToString()))
+            {
+                //TODO  userName
+
+                rlm = BaseConst.Realm.Groups;
+            }
+            else if (url.Contains(WinDemo.BaseConst.Realm.Giving.ToString()))
+            {
+                //TODO userName
+
+                rlm = WinDemo.BaseConst.Realm.Giving;
+            }
+            else if (url.Contains(WinDemo.BaseConst.Realm.Events.ToString()))
+            {
+                //
+
+                rlm = BaseConst.Realm.Events;
+            }
+
+        }
+
         public string GetTokenURI(BaseConst.Realm realm, string urlPart)
         {
             string uri = string.Empty;
@@ -65,32 +102,14 @@ namespace WinDemo
         {
             OAuthBase oAuth = new OAuthBase();
 
-            Uri url = new Uri(this.GetTokenURI(realm, BaseConst.PortalAccessTokenURL));
-            string nonce = oAuth.GenerateNonce();
-            string timestamp = oAuth.GenerateTimeStamp();
-            string normalizedUrl = string.Empty;
-            string normalizedReqParms = string.Empty;
-            string sig = oAuth.GenerateSignature(url, consumerKey, consumerSecret, null, null, "POST", timestamp, nonce, out normalizedUrl, out normalizedReqParms);
-
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-
-            string authHeader = OAuthBase.BuildOAuthHeader(BaseConst.ConsumerKey1stParty, nonce, sig, OAuthBase.HMACSHA1SignatureType, timestamp, "");
-            request.Headers.Add("Authorization", authHeader);
-            request.ContentType = "appliation/xml";
-            request.Method = "POST";
+            string url = GetTokenURI(realm, BaseConst.PortalAccessTokenURL);
 
             string creds = OAuthBase.BuildCredentials(username, password);
 
-            request.ContentLength = creds.Length;
-
-            // Write the request
-            StreamWriter stOut = new StreamWriter(request.GetRequestStream(), System.Text.Encoding.ASCII);
-            stOut.Write(creds);
-            stOut.Close();
             string results = null;
 
             //begin
-            WebResponse webResponse = request.GetResponse();
+            WebResponse webResponse = GetWebResponse(realm, OAuthBase.HMACSHA1SignatureType, "appliation/xml", "POST", url, creds, consumerKey, consumerSecret);
             StreamReader sr = new StreamReader(webResponse.GetResponseStream());
 
             if (webResponse.Headers["oauth_token"] != null)
@@ -110,20 +129,16 @@ namespace WinDemo
         }
 
 
-        public WebResponse GetWebResponse(string username, string password, BaseConst.Realm realm, string signatureType, string contentType, string httpMethod, string urlPath, string parm, string consumerKey = null, string consumerSecret = null)
+        public WebResponse GetWebResponse(BaseConst.Realm realm, string signatureType, string contentType, string httpMethod, string urlPath, string parm, string consumerKey, string consumerSecret)
         {
             OAuthBase oAuth = new OAuthBase();
             Uri url = new Uri(urlPath);
-            XmlDocument xDoc = null;
             string statusCode = string.Empty;
 
             string nonce = oAuth.GenerateNonce();
             string timestamp = oAuth.GenerateTimeStamp();
             string normalizedUrl = string.Empty;
             string normalizedReqParms = string.Empty;
-
-            GetAccessTokenForPortalUser(username, password, realm, consumerKey, consumerSecret);
-
 
             string sig = oAuth.GenerateSignature(url, consumerKey, consumerSecret, AccessToken, AccessTokenSecret, httpMethod, timestamp, nonce, signatureType, out normalizedUrl, out normalizedReqParms);
 
