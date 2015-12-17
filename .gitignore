@@ -1,3 +1,6 @@
 *.pdb
 *.exe
 WinDemo/WinDemo/obj/
+WinDemo/ConsoleDemo/bin/
+WinDemo/ConsoleDemo/obj/
+WinDemo/WinDemo/bin/Debug/
