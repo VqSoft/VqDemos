@@ -20,11 +20,11 @@ namespace ConsoleDemo
 
         private static void RegexSplitString()
         {
-            //string str = @"22491533_Jo Jo Circus Boy.,2229409_Tara Coulson..,29846399_Luke DeMoss,16338975_Mark DeMoss,30451379_Suzie Donaldson,21579841_Sid Emory,18089661_Nick Floyd,23802795_Coly,nne Gutekunst";
-            string str = "22491533_Jo Jo Circus Boy.,2229409_Tara Coulson..,29846399_Luke DeMoss,23802795_Coly,nne Gutekunst";
+            string str = @"22491533_Jo Jo Circus Boy.,2229409_Tara Coulson.., 3333_Brown, III,29846399_Luke DeMoss,16338975_Mark DeMoss,30451379_Suzie Donaldson,21579841_Sid Emory,18089661_Nick Floyd,23802795_Coly,nne Gutekunst";
+            //string str = "22491533_Jo Jo Circus Boy.,2229409_Tara Coulson..,29846399_Luke DeMoss,3333_Brown, III,23802795_Coly,nne Gutekunst";
             //string str = "aaabbbccc,111_ffff,222_gggg,sf...fff,ss,9999sdfasdfasd";
 
-            string pattern = @",(?=\d)";
+            string pattern = @",(?= *\d)";
 
             var arr = Regex.Split(str, pattern);
 
