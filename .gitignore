@@ -4,3 +4,7 @@ WinDemo/WinDemo/obj/
 WinDemo/ConsoleDemo/bin/
 WinDemo/ConsoleDemo/obj/
 WinDemo/WinDemo/bin/Debug/
+*.dll
+packages/
+XUnit.Demo/obj/
+XUnit.Demo/bin/
