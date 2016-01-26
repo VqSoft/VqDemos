@@ -7,6 +7,6 @@ E:\Code\VqDemos\WinDemo\ConsoleDemo\obj\Debug\ConsoleDemo.pdb
 E:\Code\VqDemos\ConsoleDemo\bin\Debug\ConsoleDemo.exe.config
 E:\Code\VqDemos\ConsoleDemo\bin\Debug\ConsoleDemo.exe
 E:\Code\VqDemos\ConsoleDemo\bin\Debug\ConsoleDemo.pdb
-E:\Code\VqDemos\ConsoleDemo\obj\Debug\ConsoleDemo.csprojResolveAssemblyReference.cache
 E:\Code\VqDemos\ConsoleDemo\obj\Debug\ConsoleDemo.exe
 E:\Code\VqDemos\ConsoleDemo\obj\Debug\ConsoleDemo.pdb
+E:\Code\VqDemos\ConsoleDemo\obj\Debug\ConsoleDemo.csprojResolveAssemblyReference.cache

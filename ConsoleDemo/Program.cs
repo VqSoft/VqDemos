@@ -8,21 +8,13 @@ using System.Collections;
 
 namespace ConsoleDemo
 {
+    public delegate int Calcu1(int x);
+
     class Program
     {
         static void Main(string[] args)
         {
-            double x = 0.1f;
-            double y = 0.1;
-
-            int?[] arr = new int?[3];
-            arr[0] = 1;
-            arr[1] = 1;
-            arr[2] = null;
-
-            UnmatchedGivingEqualityComparer<int?> o1 = new UnmatchedGivingEqualityComparer<int?>();
-            UnmatchedGivingEqualityComparer<int?> o2 = new UnmatchedGivingEqualityComparer<int?>();
-            Console.WriteLine(o1.Equals(arr[1],arr[2]));
+            ThreadDemo.Interlocked_CompareExchange_Demo();
 
             //Console.WriteLine(Math.Abs(x - y));
             Console.ReadKey();
@@ -31,8 +23,8 @@ namespace ConsoleDemo
         public class UnmatchedGivingEqualityComparer<T> : IEqualityComparer<T>
         {
             public bool Equals(T x, T y)
-            {                
-                if (object.Equals(y, default(T)) && object.Equals(x, default(T)) )
+            {
+                if (object.Equals(y, default(T)) && object.Equals(x, default(T)))
                 {
                     return true;
                 }
