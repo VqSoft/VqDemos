@@ -14,9 +14,10 @@ namespace ConsoleDemo
     {
         static void Main(string[] args)
         {
-            ThreadDemo.Interlocked_CompareExchange_Demo();
+            //ThreadDemo.Interlocked_CompareExchange_Demo();
+            AsyncDemo.ExceptionInGetAwaiter();
 
-            //Console.WriteLine(Math.Abs(x - y));
+            Console.WriteLine("Do something in main thread.***");
             Console.ReadKey();
         }
 
