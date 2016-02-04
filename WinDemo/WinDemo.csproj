@@ -81,10 +81,10 @@
     <Compile Include="frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMongoDBTest.cs">
+    <Compile Include="Mongodb\frmMongoDBTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMongoDBTest.Designer.cs">
+    <Compile Include="Mongodb\frmMongoDBTest.Designer.cs">
       <DependentUpon>frmMongoDBTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Mongodb\MongodbHelper.cs" />
@@ -103,7 +103,7 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMongoDBTest.resx">
+    <EmbeddedResource Include="Mongodb\frmMongoDBTest.resx">
       <DependentUpon>frmMongoDBTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
