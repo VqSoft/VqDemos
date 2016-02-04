@@ -55,7 +55,7 @@
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(818, 118);
+            this.btnRun.Location = new System.Drawing.Point(528, 113);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(75, 23);
             this.btnRun.TabIndex = 2;

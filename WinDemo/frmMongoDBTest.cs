@@ -22,7 +22,8 @@ namespace WinDemo
 
         private void frmMongoDBTest_Load(object sender, EventArgs e)
         {
-            txtConnStr.Text = @"mongodb://WL00070357:27016,WL00070357:27017,WL00070357:27018/?connect=replicaSet;replicaset=thomas_test;readpreference=primaryPreferred";
+            //txtConnStr.Text = @"mongodb://WL00070357:27016,WL00070357:27017,WL00070357:27018/?connect=replicaSet;replicaset=thomas_test;readpreference=primaryPreferred";
+            txtConnStr.Text = @"mongodb://WL00070357:27017";
             txtThreadCount.Text = "30";
             txtUserCount.Text = "200";
         }

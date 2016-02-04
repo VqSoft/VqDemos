@@ -10,7 +10,7 @@ namespace WinDemo.Mongodb
     public sealed class MongoSessionDocument
     {
 
-        private string InnerID = new Guid().ToString();
+        private string InnerID = Guid.NewGuid().ToString();
 
         public MongoSessionDocument()
         {

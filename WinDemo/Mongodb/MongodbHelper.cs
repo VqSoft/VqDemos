@@ -44,7 +44,7 @@ namespace WinDemo.Mongodb
             var db = client.GetServer().GetDatabase(DatabaseName);
 
             MongoCollectionSettings<BsonDocument> collectionSetting = new MongoCollectionSettings<BsonDocument>(db, collectionName);
-            collectionSetting.ReadPreference = ReadPreference.PrimaryPreferred;
+            //collectionSetting.ReadPreference = ReadPreference.PrimaryPreferred;
             collectionSetting.WriteConcern = WriteConcern.Acknowledged;
 
             return db.GetCollection(collectionSetting);
@@ -72,7 +72,7 @@ namespace WinDemo.Mongodb
             insertDoc.Add("Flags", item.Flags);
             insertDoc.Add("User", item.User);
 
-            coll.Save(insertDoc);
+            var ret= coll.Save(insertDoc);
 
         }
 
