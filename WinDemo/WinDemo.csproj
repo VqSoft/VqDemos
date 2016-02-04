@@ -57,6 +57,12 @@
   <ItemGroup>
     <Compile Include="BaseConst.cs" />
     <Compile Include="ConfigUtil.cs" />
+    <Compile Include="FilesOp\frmParseTxt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilesOp\frmParseTxt.Designer.cs">
+      <DependentUpon>frmParseTxt.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmContainer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,11 +87,16 @@
     <Compile Include="frmMongoDBTest.Designer.cs">
       <DependentUpon>frmMongoDBTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mongodb\MongodbHelper.cs" />
+    <Compile Include="Mongodb\MongoSessionDocument.cs" />
     <Compile Include="OAuthBase.cs" />
     <Compile Include="OAuthTicket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions.cs" />
+    <EmbeddedResource Include="FilesOp\frmParseTxt.resx">
+      <DependentUpon>frmParseTxt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmContainer.resx">
       <DependentUpon>frmContainer.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,9 +128,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mongodb\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
