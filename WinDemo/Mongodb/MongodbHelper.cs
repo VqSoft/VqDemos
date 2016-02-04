@@ -40,14 +40,17 @@ namespace WinDemo.Mongodb
 
         public MongoCollection<BsonDocument> GetCollection(string collectionName = "Sessions")
         {
-            var client = new MongoClient(ConnectionString);
-            var db = client.GetServer().GetDatabase(DatabaseName);
 
-            MongoCollectionSettings<BsonDocument> collectionSetting = new MongoCollectionSettings<BsonDocument>(db, collectionName);
+            // var client = new MongoClient(ConnectionString);
+            //var db = client.GetServer().GetDatabase(DatabaseName);
+            //MongoCollectionSettings<BsonDocument> collectionSetting = new MongoCollectionSettings<BsonDocument>(db, collectionName);
             //collectionSetting.ReadPreference = ReadPreference.PrimaryPreferred;
-            collectionSetting.WriteConcern = WriteConcern.Acknowledged;
+            //collectionSetting.WriteConcern = WriteConcern.Acknowledged;
 
-            return db.GetCollection(collectionSetting);
+            var client = MongoServer.Create(ConnectionString);
+            var db = client.GetDatabase(DatabaseName);
+
+            return db.GetCollection(collectionName);
         }
 
         public void InsertDoc(MongoSessionDocument item)
@@ -90,10 +93,10 @@ namespace WinDemo.Mongodb
             coll.Update(query,update);
         }
 
-        public void Test(MongoSessionDocument item)
+        public void InsertAndUpdate(MongoSessionDocument item)
         {
             InsertDoc(item);
-            GetAndUpdate(item.ID);
+            UpdateDoc(item);
         }
 
         public void GetAndUpdate(string id)
@@ -129,7 +132,7 @@ namespace WinDemo.Mongodb
             //    }
             //}
 
-            return "sdfasfasdfasdfasdfasdfasdfasdfasdfasd;j;j;jf;sdafasdfsdafklldksjfldksjfsdhofhosdfhosdfusdaofasd";
+            return "AAAsdfasfasdfasdfasdfasdfasdfasdfasdfaaaaaaaaaaaaffffffasdfsdafklldksjfldksjfsdhofhosdfhosdfusdaofasBBB";
         }
     }
 }
