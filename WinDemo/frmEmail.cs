@@ -27,7 +27,20 @@ namespace WinDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SendEmail();
+            try
+            {
+                btnSend.Enabled = false;
+                SendEmail();
+            }
+            catch (Exception )
+            {
+                
+                throw;
+            }
+            finally
+            {
+                btnSend.Enabled = true;
+            }
         }
 
         private void SendEmail()
