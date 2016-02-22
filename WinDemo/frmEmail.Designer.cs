@@ -61,7 +61,7 @@
             this.txtSmtpServer.Name = "txtSmtpServer";
             this.txtSmtpServer.Size = new System.Drawing.Size(100, 20);
             this.txtSmtpServer.TabIndex = 1;
-            this.txtSmtpServer.Text = "ext-mta";
+            this.txtSmtpServer.Text = "mta";
             // 
             // btnSend
             // 

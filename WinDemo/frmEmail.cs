@@ -14,6 +14,8 @@ namespace WinDemo
     public partial class frmEmail : frmBase
     {
 
+        // mail server ext-mta, mta
+
         private static string UserEmailAbuse = "info@fellowshiponemail.com";
         private static string SendEmailFrom = "fellowshiponemail@activenetwork.com";
 
