@@ -16,6 +16,8 @@ namespace WinDemo
         #region 子窗体
         private static frmMongoDBTest mongodbTestForm = null;
 
+
+        private static frmEmail emailFrom = null;
         #endregion
         public frmContainer()
         {
@@ -32,6 +34,18 @@ namespace WinDemo
                 mongodbTestForm.WindowState = FormWindowState.Maximized;
             }
             mongodbTestForm.Show();
+        }
+
+        private void eMailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (emailFrom == null || emailFrom.IsDisposed)
+            {
+                emailFrom = new frmEmail();
+                emailFrom.MdiParent = this;
+                emailFrom.WindowState = FormWindowState.Maximized;
+            }
+
+            emailFrom.Show();
         }
     }
 }

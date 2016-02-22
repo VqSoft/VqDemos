@@ -30,13 +30,15 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mongoDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mongoDBToolStripMenuItem});
+            this.mongoDBToolStripMenuItem,
+            this.eMailToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(687, 24);
@@ -49,6 +51,13 @@
             this.mongoDBToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.mongoDBToolStripMenuItem.Text = "MongoDBTest";
             this.mongoDBToolStripMenuItem.Click += new System.EventHandler(this.mongoDBToolStripMenuItem_Click);
+            // 
+            // eMailToolStripMenuItem
+            // 
+            this.eMailToolStripMenuItem.Name = "eMailToolStripMenuItem";
+            this.eMailToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.eMailToolStripMenuItem.Text = "EMail";
+            this.eMailToolStripMenuItem.Click += new System.EventHandler(this.eMailToolStripMenuItem_Click);
             // 
             // frmContainer
             // 
@@ -71,5 +80,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mongoDBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eMailToolStripMenuItem;
     }
 }
