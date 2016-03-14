@@ -15,10 +15,29 @@ namespace ConsoleDemo
         static void Main(string[] args)
         {
             //ThreadDemo.Interlocked_CompareExchange_Demo();
-            AsyncDemo.ExceptionInGetAwaiter();
+            //AsyncDemo.ExceptionInGetAwaiter();
 
-            Console.WriteLine("Do something in main thread.***");
+            //Console.WriteLine("Do something in main thread.***");
+
+
+            int emailId = Int32.MinValue;
+            if (!int.TryParse("10",out emailId))
+            {
+                Console.WriteLine("Error");
+            }
+            else
+            {
+                Console.WriteLine(emailId);
+            }
+
             Console.ReadKey();
+        }
+
+        private static void ShowEnvironmentVariableTarget()
+        {
+            var machineCfg = Environment.GetEnvironmentVariable("CONFIG_ENVIRONMENT", EnvironmentVariableTarget.User);
+            Console.WriteLine(machineCfg);
+            
         }
 
         public class UnmatchedGivingEqualityComparer<T> : IEqualityComparer<T>
