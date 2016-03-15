@@ -21,7 +21,7 @@ namespace ConsoleDemo
             //Console.WriteLine("Do something in main thread.***");
 
 
-            AbstractFactory.Test();
+            ConsoleDemo.DesginPatterns.ConstructorPatterns.AdapterPattern.Test();
 
             Console.ReadKey();
         }
