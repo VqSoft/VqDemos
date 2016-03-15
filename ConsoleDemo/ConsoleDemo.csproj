@@ -46,6 +46,7 @@
     <Compile Include="AsyncDemo.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\AdapterPattern.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\BridgePattern.cs" />
+    <Compile Include="DesginPatterns\ConstructorPatterns\DecoratorPattern.cs" />
     <Compile Include="DesginPatterns\CreatePatterns\AbstractFactory.cs" />
     <Compile Include="DesginPatterns\CreatePatterns\FactoryMethod.cs" />
     <Compile Include="DesginPatterns\CreatePatterns\SimpleFactory.cs" />
