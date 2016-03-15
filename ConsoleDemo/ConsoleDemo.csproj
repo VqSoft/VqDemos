@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncDemo.cs" />
+    <Compile Include="DesginPatterns\ActionPatterns\DutyChain.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\AdapterPattern.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\BridgePattern.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\DecoratorPattern.cs" />
@@ -60,9 +61,7 @@
     <None Include="App.config" />
     <None Include="DesginPatterns\DesignPatterns.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DesginPatterns\ActionPatterns\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
