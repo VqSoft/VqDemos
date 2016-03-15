@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Collections;
+using ConsoleDemo.DesginPatterns.CreatePatterns;
 
 namespace ConsoleDemo
 {
@@ -20,15 +21,7 @@ namespace ConsoleDemo
             //Console.WriteLine("Do something in main thread.***");
 
 
-            int emailId = Int32.MinValue;
-            if (!int.TryParse("10",out emailId))
-            {
-                Console.WriteLine("Error");
-            }
-            else
-            {
-                Console.WriteLine(emailId);
-            }
+            FactoryMethod.Test();
 
             Console.ReadKey();
         }
