@@ -21,7 +21,7 @@ namespace ConsoleDemo
             //Console.WriteLine("Do something in main thread.***");
 
 
-            FactoryMethod.Test();
+            AbstractFactory.Test();
 
             Console.ReadKey();
         }
