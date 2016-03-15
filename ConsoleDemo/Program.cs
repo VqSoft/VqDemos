@@ -21,7 +21,7 @@ namespace ConsoleDemo
             //Console.WriteLine("Do something in main thread.***");
 
 
-            ConsoleDemo.DesginPatterns.ActionPatterns.CommandPattern.Test();
+            ConsoleDemo.DesginPatterns.ActionPatterns.ObserverPattern.Test();
 
             Console.ReadKey();
         }

@@ -46,6 +46,7 @@
     <Compile Include="AsyncDemo.cs" />
     <Compile Include="DesginPatterns\ActionPatterns\CommandPattern.cs" />
     <Compile Include="DesginPatterns\ActionPatterns\DutyChain.cs" />
+    <Compile Include="DesginPatterns\ActionPatterns\ObserverPattern.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\AdapterPattern.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\BridgePattern.cs" />
     <Compile Include="DesginPatterns\ConstructorPatterns\DecoratorPattern.cs" />
